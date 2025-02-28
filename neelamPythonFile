@@ -1,0 +1,37 @@
+#Neelam Persaud 
+
+#Prompt one 
+import math #
+def volume (radius):#creating function for the sphere's volume
+    x= 4/3 * math.pi * radius **3 #applying the formula of the volume of a sphere
+    return x #defning that the radius is 5
+r=volume(5) #the result has the value to function itself
+print(f"The volume of the sphere is {r:.2f}") #Making sure that there is a decimal point and also making a sentence for the function
+
+#Prompt two
+def wholesale_cost (copies): #Function of the cost
+    book_price= 24.45 #Create a variable for the cover price 
+    shipFirst = 3 #create a variable for the first copy 
+    shipAfter = 0.73 #create a variable for the later shipping price
+    discount= 0.40 #create a variable for the discount
+    booksTotal =(book_price *( 1-discount))*copies #to get the discount price, we have to take the cov and multiply it with the decimal  to get 40
+    shipCost = shipFirst+(shipAfter*(copies-1)) #to get the total ship cost, add the first copy, with the ship after and multiply it with 59 copies
+    total= booksTotal + shipCost  #the total will add the totat books and the total shipping cost
+    print (f"The total wholesale price is ${total:.2f}")  #Printing the total 
+wholesale_cost(60) #calling the function
+
+#Prompt three
+def running_time (start_hour, start_minutes): #starting the function with two parameters with the hour and mins
+    easy_pace = 8*60+15 #turning 8 mins into secs and adding 15 secs
+    tempo_pace = 7*60+12 #trunign 7 mins into secs and adding 12 secs
+    total_time_sec= easy_pace*2 + (tempo_pace*3) #we multiply the easy pace with 2 because it comes up twice, and tempo with 3 because they run 3 miles
+    total_min = total_time_sec // 60 #we get the ingral division of the total mins (whole number)
+    total_secs = total_time_sec % 60 #the remainder which will be the seconds
+    end_mins = total_min + start_minutes #to get the ending minutes we add total minutes and the start minutes
+    end_hour = start_hour #storing the start hour with the end hour
+    if end_mins >= 60: #if end mins is greater or equals to 60 it will add another hour in it
+        end_hour += end_mins // 60 #this shows how the minuteswill add another hour after it turns 60 mins
+        end_mins = end_mins % 60 #this is for adding a minute every 60 secs
+        return end_hour, end_mins #returns the hours and mins
+end_hour, end_mins = running_time(6,52) #calls the function by making the 6 the hour and 52 the minutes
+print (f"You arrive home for breakfast at {end_hour}:{end_mins} AM") #creating a sentence using formating and making it look like actual time
