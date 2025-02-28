@@ -1,0 +1,6 @@
+def right_justify(s): #Define the function right_justify
+    x= len(s) #Calculates the length of the string
+    for _ in range(70-x): # Creates a loop that runs
+        print(" ", end="") #This space is printed repeatedly until the total number of spaces equals
+    print(s) #print the output
+right_justify("allen") #the output
