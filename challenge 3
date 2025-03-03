@@ -1,0 +1,18 @@
+def do_twice(f, value): #Define the function two times with the arguement 
+    f(value) #this line call the function 
+    f(value) 
+
+
+def print_twice(s): 
+    print(s) 
+    print(s) 
+
+do_twice(print_twice, 'spam') 
+
+#
+def do_four(f, value):
+    do_twice(f, value) 
+    do_twice(f, value) 
+
+
+do_four(print_twice, 'spam')
