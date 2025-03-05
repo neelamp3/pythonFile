@@ -1,0 +1,14 @@
+#Neelam Persaud 
+
+
+print('+', '-' * 4, '+', '-' * 4, '+') #This part of the row print the top row of the grid 
+print('|', ' ' * 4, '|', ' ' * 4, '|')# This print the inner row of the grid
+print('|', ' ' * 4, '|', ' ' * 4, '|')#This line also repeat and it create the | vertical bar in the middle 
+print('|', ' ' * 4, '|', ' ' * 4, '|')#repeat
+print('|', ' ' * 4, '|', ' ' * 4, '|')#repeat
+print('+', '-' * 4, '+', '-' * 4, '+')#This line create first line of design 
+print('|', ' ' * 4, '|', ' ' * 4, '|')#repeat
+print('|', ' ' * 4, '|', ' ' * 4, '|')#repeat
+print('|', ' ' * 4, '|', ' ' * 4, '|')#repeat
+print('|', ' ' * 4, '|', ' ' * 4, '|')#repeat 
+print('+', '-' * 4, '+', '-' * 4, '+')#This line create the last line of design
