@@ -17,3 +17,39 @@ def draw(t, length, n): #The function
     bk(t, length*n)#Moving backward
 
 
+#Neelaam 
+#Challenge 7
+
+import turtle
+
+# Define the function
+def square(t,l):
+    for _ in range(4):  # Loop to draw 4 sides
+        t.forward(l)  # Move the turtle forward
+        t.right(90)      # Turn the turtle 90
+
+# Create a turtle object named bob
+bob = turtle.Turtle()
+
+# Call the function, passing bob as the argument
+square(bob,100)
+
+
+def draw(t, length, n):
+    if n == 0:
+        return
+    angle = 50  
+    t.forward(length * n)  # Move the turtle forward by length*n
+    t.left(angle)  # Turn the turtle left
+    draw(t, length, n-1)  # Recursive call
+    t.right(2 * angle)  # Turn the turtle right by 2*angle
+    draw(t, length, n-1)  # Recursive call
+    t.left(angle)  # Turn the turtle left
+    t.backward(length * n)  # Move the turtle backward by length*n
+
+
+
+draw(bob, 10, 5)
+
+# Keep the window open until closed manually
+turtle.mainloop()
