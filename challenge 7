@@ -1,0 +1,19 @@
+#Neelam Persaud 
+#PD 5&6
+#03/14/2025
+#Challenge 7
+
+#Description- In this code it create a turtle moving the direction that is moving left,forward,right and backward creating little braches. 
+def draw(t, length, n): #The function
+    if n == 0:
+        return
+    angle = 50
+    fd(t, length*n) # Moving foward (Foward distance)
+    lt(t, angle) # Left tuen (Moving left)
+    draw(t, length, n-1) #calling the function 
+    rt(t, 2*angle) #Moving right (right turn by 100 degree)
+    draw(t, length, n-1) #calling the function again
+    lt(t, angle) #Left turn returnning to the original design/direction
+    bk(t, length*n)#Moving backward
+
+
