@@ -1,0 +1,58 @@
+#Neelaam 
+#Challenge 12
+
+
+import turtle
+
+# Function to draw a square (from your previous code)
+def square(t, l):
+    for _ in range(4):  # Loop to draw 4 sides
+        t.forward(l)  # Move the turtle forward
+        t.right(90)    # Turn the turtle 90 degrees
+
+# Function to draw a circle
+def circle(t, radius):
+    t.circle(radius)  # Use the turtle's built-in circle function
+
+# Function to draw an arc (portion of a circle)
+def arc(t, radius, angle):
+    t.circle(radius, angle)  # Draw part of the circle defined by the angle
+
+# Function to draw a polygon (general n-sided)
+def polygon(t, sides, length):
+    angle = 360 / sides
+    for _ in range(sides):
+        t.forward(length)
+        t.right(angle)
+
+# Function to draw flower pattern using recursion
+def draw_flower(t, length, n, angle):
+    if n == 0:
+        return
+    t.color("red")  # Set flower petal color
+    t.forward(length * n)  
+    t.left(angle)  
+    draw_flower(t, length, n - 1, angle)  # Recursive call
+    t.right(2 * angle)  # Turn the turtle right by 2*angle
+    draw_flower(t, length, n - 1, angle)  # Recursive call
+    t.left(angle)  # Turn the turtle left
+    t.backward(length * n)  # Move the turtle backward by length*n
+
+# Function to create flower with multiple petals and colors
+def draw_full_flower(t, petals, length, n, angle):
+    for _ in range(petals):
+        draw_flower(t, length, n, angle)  # Draw one petal
+        t.right(360 / petals)  # Rotate to draw the next petal
+
+# Set up the screen and turtle
+screen = turtle.Screen()
+screen.bgcolor("lightblue")  # Background color for the screen
+bob = turtle.Turtle()
+bob.shape("turtle")
+bob.speed(0)  # Fastest drawing speed
+
+# Start drawing the flower
+draw_full_flower(bob, petals=6, length=10, n=5, angle=50)
+
+# Keep the window open until closed manually
+turtle.mainloop()
