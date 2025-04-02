@@ -1,0 +1,48 @@
+#Neelam Persaud 
+#Challenge 15
+
+import turtle
+
+# Set up the screen
+screen = turtle.Screen()
+screen.bgcolor(" pink")
+
+# Create turtle
+t = turtle.Turtle()
+t.speed(0)
+t.pensize(2)
+
+# Function to draw a Koch curve
+def koch_curve(t, length, iteration):
+    if iteration == 0:
+        t.forward(length)
+    else:
+        length /= 3.0
+        koch_curve(t, length, iteration-1)
+        t.left(60)
+        koch_curve(t, length, iteration-1)
+        t.right(120)
+        koch_curve(t, length, iteration-1)
+        t.left(60)
+        koch_curve(t, length, iteration-1)
+
+# Function to draw a Koch snowflake
+def draw_snowflake(t, length, iteration):
+    for _ in range(3):
+        koch_curve(t, length, iteration)
+        t.right(120)
+
+# Position the turtle to draw 4 versions in a grid
+positions = [(-200, 150), (100, 150), (-200, -100), (100, -100)]
+
+
+for i in range(4):
+    t.penup()
+    t.goto(positions[i])
+    t.setheading(0)
+    t.pendown()
+    draw_snowflake(t, 100, i)
+
+# Hide turtle and finish
+t.hideturtle()
+turtle.done()
