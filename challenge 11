@@ -1,0 +1,21 @@
+#Neelam Persaud 
+
+import turtle
+
+# Function to draw an arc with a given radius and angle
+def arc(radius, angle):
+    turtle.penup()  
+    turtle.goto(-radius, 0) 
+    turtle.pendown()  # Put the pen down to start drawing
+
+    # Draw the arc
+    turtle.circle(radius, angle)
+
+# Setup the screen and turtle
+turtle.speed(50)  # Fastest drawing speed
+
+# Call the arc function
+arc(100, 180)  
+
+# Finish drawing
+turtle.done()
