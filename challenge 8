@@ -1,0 +1,30 @@
+#Neelam Persaud 
+import turtle
+
+def square(t,length): 
+  for i in range(4): 
+    t.forward(length) 
+    t.left(90)
+    
+    # Create the first turtle named 't'
+t = turtle.Turtle()  # Create an instance of the turtle class named 't'
+t.shape("turtle")  # Set the turtle's shape to "turtle"
+t.speed(5)  # Set turtle speed 
+
+# Create a screen to display the turtle's movements
+screen = turtle.Screen()
+
+# Test 1: Draw a square with 't' and a side length of 50
+square(t, 50)  # Calling the 'square' function 
+
+# Create another turtle named 'bob'
+bob = turtle.Turtle()  # Create a second turtle named 'bob'
+bob.speed(3)  # Set 'bob's speed to 3
+bob.color("green")  # Change 'bob's color to green
+
+# Test 2: Draw a square with 'bob' and a side length of 100
+
+# Test 3: Draw a square with 't' and a side length of 150
+
+# Keep the window open until the user closes it manually
+screen.mainloop()
