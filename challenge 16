@@ -1,0 +1,36 @@
+#Neelam Persaud 
+#04/02/2025
+#Challenge 16
+#Description- This code have several function to work with words and that include palindrome it check the list of words
+
+
+# Function to return the first letter of the word
+def first_letter(word):
+    return word[0] if word else ''
+
+
+def last_letter(word):
+    return word[-1] if word else ''
+
+
+def middle_part(word):
+    return word[1:-1] if len(word) > 2 else ''
+
+# Function to check if a word is a palindrome
+def is_palindrome(word):
+    
+    if len(word) <= 1:
+        return True
+    
+    if word[0] == word[-1]:
+        return is_palindrome(word[1:-1])
+    return False
+
+
+test_words = ["noon", "redivider", "hello", "a", ""]
+test_results = {word: is_palindrome(word) for word in test_words}
+
+# Print the test results
+print("Test Results for is_palindrome function:")
+for word, result in test_results.items():
+    print(f"'{word}' is a palindrome: {result}")
