@@ -1,0 +1,19 @@
+#Neelam Persaud
+#04/07/2025
+#Prd5&6
+#Challenge 18
+
+
+def gcd(a, b):
+   
+    if b == 0:
+        return a
+    
+    return gcd(b, a % b)
+
+# Test cases
+print(gcd(48, 18))  
+print(gcd(56, 98))  
+print(gcd(101, 10))
+print(gcd(42, 56)) 
+print(gcd(17, 13))  
