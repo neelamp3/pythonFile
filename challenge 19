@@ -1,0 +1,32 @@
+#Neelam Persaud 
+#04/08/2925
+#Prd5-6
+#Challenge 19
+
+
+
+def has_no_e(word):
+    for letter in word:
+        if letter == 'e' or letter == 'E': 
+            return False
+    return True
+
+def filter_words_without_e(word_list):
+    words_without_e = [word for word in word_list if has_no_e(word)]
+    
+    total_words = len(word_list)
+    
+    words_without_e_count = len(words_without_e)
+    
+    if total_words > 0:
+        percentage_without_e = (words_without_e_count / total_words) * 100
+    else:
+        percentage_without_e = 0  #
+    
+    # Print the results
+    print(f"Words without 'e': {words_without_e}")
+    print(f"Percentage of words without 'e': {percentage_without_e:.2f}%")
+
+word_list = ["hello", "world", "sky", "python", "test", "why", "loop", "cloud"]
+
+filter_words_without_e(word_list)
