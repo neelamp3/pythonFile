@@ -1,0 +1,33 @@
+#Neelam Persaud
+#PRD5-6
+#04/10/2025
+#Challenge 20
+
+
+# Step 1: Define the function
+def avoids(word, forbidden):
+    for letter in word:
+        if letter in forbidden:
+            return False
+    return True
+
+# Step 2: Simulated "words.txt" list
+word_list = [
+    "apple", "banana", "grape", "cherry", "kiwi",
+    "orange", "mango", "blueberry", "strawberry", "melon"
+]
+
+# Step 3: Main function to interact with the user
+def main():
+    # Ask the user for forbidden letters
+    forbidden = input("Enter forbidden letters: ")
+
+    count = 0
+    for word in word_list:
+        if avoids(word, forbidden):
+            count += 1
+
+    print("Number of words that do not contain any of the forbidden letters:", count)
+
+# Run the program
+main()
