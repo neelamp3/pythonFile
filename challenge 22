@@ -1,0 +1,40 @@
+#Neelam Persaud
+#PRD5-6
+#04/10/2025
+#Challenge 22
+
+  #Neelam Persaud
+#PRD5-6
+#04/10/2025
+#Challenge 22
+
+
+
+def uses_all(word, required_letters):
+    word = word.lower()
+    
+    for letter in required_letters:
+        if letter not in word:
+            return False
+    return True
+
+
+required_vowels = "aeiou"
+word1 = "education"
+print(uses_all(word1, required_vowels)) 
+
+required_vowels_plus_y = "aeiouy"
+word2 = "facetiously"
+print(uses_all(word2, required_vowels_plus_y))  
+
+word3 = "hello"
+print(uses_all(word3, required_vowels))  
+
+
+word_list = ["education", "facetiously", "hello", "queue", "audiology"]
+
+count_vowels = sum(1 for word in word_list if uses_all(word, required_vowels))
+print(f"Words with all vowels: {count_vowels}") 
+
+count_vowels_plus_y = sum(1 for word in word_list if uses_all(word, required_vowels_plus_y))
+print(f"Words with all vowels plus 'y': {count_vowels_plus_y}")  
