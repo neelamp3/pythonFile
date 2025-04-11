@@ -1,0 +1,25 @@
+#Neelam Persaud
+#PRD5-6
+#04/10/2025
+#Challenge 21
+
+  def uses_only(word, allowed_letters):
+    for letter in word:
+        if letter not in allowed_letters:
+            return False
+    return True
+
+
+allowed = "acefhl"
+sentence = "A chef of aloha"
+print(uses_only(sentence.lower(), allowed))  # Expected: True
+
+word1 = "hello"
+allowed2 = "acefhl"
+print(uses_only(word1.lower(), allowed2))  
+
+word2 = "world"
+allowed3 = "acefhl"
+print(uses_only(word2.lower(), allowed3))  
+
+
