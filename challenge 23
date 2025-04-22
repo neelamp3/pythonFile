@@ -1,0 +1,26 @@
+#NeelamPersaud 
+#Prd5-6
+##04/22/2022
+#Challenge 23
+
+
+
+def is_abecedarian(word):
+    return list(word) == sorted(word)
+
+print(is_abecedarian("abc"))       # True
+print(is_abecedarian("aegilops"))  # True
+print(is_abecedarian("art"))       # False
+print(is_abecedarian("loop"))      # False
+
+words = [
+    "almost", "biopsy", "chintz", "ghost", "floss", "aegilops",
+    "abc", "act", "billowy", "buzz", "art", "loop", "ad", "a"
+]
+
+count = 0
+for word in words:
+    if is_abecedarian(word):
+        count += 1
+
+print("Number of abecedarian words:", count)
